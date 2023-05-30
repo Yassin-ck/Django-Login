@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+
+
+{% block content %}
+
+    {% csrf_token %}
+
+    <h1>Home Page</h1>
+    <a href="{% url 'logout' %}" class="btn btn-primart">Logout</a>
+
+    {% endblock %}
+

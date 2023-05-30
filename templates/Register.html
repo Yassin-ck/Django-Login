@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+<div class="container text-center" >
+{% block content %}
+<form action="" method="post" >
+    {% csrf_token %}
+    <div class="container text-center bg-warning" >
+        <label>UserName : </label>
+        <input name="username" /><br /><br />
+        <label>Email : </label>
+        <input name="email" /><br /><br />
+        <label>Password : </label>
+        <input name="password" /><br /><br />
+        <label>Confirm Password : </label>
+        <input name="cpassword" /><br /><br />
+        <button >Register</button>
+       
+
+        <a href="{% url 'login' %}">login</a>
+       
+    </div>
+</form> 
+    {% endblock %}
+</div>
