@@ -4,9 +4,10 @@
 {% block content %}
 
     {% csrf_token %}
-
-    <h1>Home Page</h1>
-    <a href="{% url 'logout' %}" class="btn btn-primart">Logout</a>
+<div class=" text-center ">
+    <h1 class="m-5" >Home Page</h1>
+    <a href="{% url 'logout' %}" class="btn btn-danger mb-5 ">Logout</a>
+</div>
 
     {% endblock %}
 
