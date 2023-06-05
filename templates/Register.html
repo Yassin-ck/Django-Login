@@ -3,18 +3,19 @@
 <div class="container text-center " >
 {% block content %}
 <form action="" method="post" >
-    {% csrf_token %}
+    {% csrf_token %}    
     <div class="container text-center bg-light border border-radius rounded mt-5" >
         <h1>Register</h1><hr>
-        
+       
+        <input name="username" type="text" required placeholder="Username"  /><br />
+    
+        <br />
 
-        <input name="username" type="text" required placeholder="Username" /><br /><br />
-
-        <input name="email" type="email" required placeholder="Email" /><br /><br />
+        <input name="email" type="email" required placeholder="Email"  /><br /><br />
      
-        <input name="password" type="password" required placeholder="Password"/><br /><br />
+        <input name="password" type="password" required placeholder="Password" /><br /><br />
      
-        <input name="cpassword" type="password" required  placeholder="Comfirm Password"/><br /><br />
+        <input name="cpassword" type="password" required  placeholder="Confirm Password" /><br /><br />
         <button type="submit" class="text-center bg-success border border-radius rounded m-3 ps-3 pb-2 pe-3 pt-2"  >Register</button>
 <br/>
         <a href="{% url 'login' %}" class="btn text-primary ">if you have already an account,login here...</a>
