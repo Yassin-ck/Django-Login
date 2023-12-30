@@ -13,13 +13,11 @@ import re
 
 @never_cache
 def Register(request):
-    
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
         cPassword = request.POST.get('cpassword') 
-        print('value get')    
         try:
             if len(username)<3:
                 raise ValueError('Username should have atleast 3 characters')
@@ -51,33 +49,28 @@ def Register(request):
                             my_user.password = make_password
                             my_user.save()
                             messages.success(request,'User Registerion Succesfull...')              
-                            return redirect('login')
-                                  
+                            return redirect('login')                          
     return render(request, 'Register.html')
 
 @never_cache
-def Login(request):
-    
+def Login(request): 
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request,username=username,password=password)
         if user is not None:
             login(request,user)
-            print('hii')
             return redirect ('home')
         else:
-            messages.error(request,'Username or Password not Correct')
-         
-    return render(request,'Login.html')
-        
-        
+            messages.error(request,'Username or Password not Correct')    
+    return render(request,'Login.html')        
 
 
 @login_required(login_url='login')
 @never_cache
 def Home(request): 
     return render(request,'home.html')
+
 
 def Logout(request):
     logout(request) 
