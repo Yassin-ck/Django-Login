@@ -52,6 +52,7 @@ def Register(request):
                             return redirect('login')                          
     return render(request, 'Register.html')
 
+
 @never_cache
 def Login(request): 
     if request.method == 'POST':
